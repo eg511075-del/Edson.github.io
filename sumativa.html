@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evakuacion sumativa de interfaz</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f4f4f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #0078d7;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #005a9e;
+      flex-wrap: wrap;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      padding: 1rem 2rem;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    nav button:hover {
+      background: #004b87;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .content {
+      display: none;
+      max-width: 600px;
+      text-align: center;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .content.active {
+      display: block;
+    }
+
+    .content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #0078d7;
+      color: white;
+    }
+
+    /* Responsividad */
+    @media (max-width: 600px) {
+      nav button {
+        flex: 1 1 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Menú Interactivo</h1>
+  </header>
+
+  <nav>
+    <button onclick="mostrarContenido('¿Que es?')">¿Que es?</button>
+    <button onclick="mostrarContenido('Pruebas de usabilidad')">Pruebas de usabilidad</button>
+    <button onclick="mostrarContenido('Benchmarking')">Benchmarking</button>
+    <button onclick="mostrarContenido('Analisis web')">Analisi web</button>
+    <button onclick="mostrarContenido('Encuestas y cuestionarios')">Encuestas y cuestionarios</button>
+<button onclick="mostrarContenido('Revision de expertos')">Revision de expertos</button>
+  </nav>
+
+  <main>
+    <div id="¿Que es?" class="content active">
+      <h2>¿Que es?</h2>
+      <p>La evaluación sumativa de interfaces es un proceso clave en el diseño de experiencia de usuario (UX) que se realiza para medir la efectividad y eficiencia final de una interfaz de usuario.  Se enfoca en la calidad del producto terminado, a menudo comparándolo con estándares o productos de la competencia, y generalmente se lleva a cabo al final de una fase de diseño o desarrollo.</p>
+      <img src="quees.PNG" alt="pure">
+    </div>
+
+    <div id="Pruebas de usabilidad" class="content">
+      <h2>Pruebas de usabilidad</h2>
+      <p>Se pide a usuarios reales que realicen tareas específicas en la interfaz. Se registran métricas como el tiempo de la tarea, la tasa de éxito y el número de errores.</p>
+      <img src="test.PNG" alt="bootstrap">
+    </div>
+
+    <div id="Benchmarking" class="content">
+      <h2>Benchamarking</h2>
+      <p>Consiste en comparar la interfaz con productos de la competencia o con versiones anteriores del mismo producto, utilizando métricas de usabilidad clave.</p>
+      <img src="bench.PNG" alt="kube">
+    </div>
+
+ <div id="Analisis web" class="content">
+      <h2>Analisis web  UI</h2>
+      <p>Uso de herramientas analíticas (como Google Analytics) para estudiar el comportamiento real de los usuarios (clics, tasas de rebote, embudos de conversión, etc.) una vez que el producto está en vivo.</p>
+      <img src="analisi.PNG" alt="metro">
+    </div>
+
+ <div id="Encuestas y cuestionarios" class="content">
+      <h2>analisis y cuestionarios</h2>
+      <p>Se usan escalas estandarizadas (como el SUS - System Usability Scale, o el SEQ - Single Ease Question) para medir la satisfacción y percepción subjetiva de los usuarios.</p>
+      <img src="encuestas.PNG" alt="kickoff">
+    </div>
+
+ <div id="Revision de expertos" class="content">
+      <h2>Revision de expertos</h2>
+      <p>Expertos en usabilidad evalúan la interfaz basándose en principios establecidos (heurísticas de Nielsen, por ejemplo). Aunque también se usa en evaluación formativa, una revisión final puede ser sumativa.</p>
+      <img src="revision.PNG" alt="material">
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Ejemplo de página responsiva</p>
+  </footer>
+
+  <script>
+    function mostrarContenido(id) {
+      const contenidos = document.querySelectorAll('.content');
+      contenidos.forEach(c => c.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
